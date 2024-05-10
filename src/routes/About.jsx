@@ -1,14 +1,17 @@
-import "./about.css";
-import { Link, useNavigate } from "react-router-dom";
-import json from "../resources.json";
+import './about.css';
+import { Link, useNavigate } from 'react-router-dom';
+import json from '../resources.json';
 
 export default function About() {
   const navigate = useNavigate();
   const credits = json.credits;
 
   return (
-    <div className="About">
-      <div className="back" onClick={() => navigate("/")}>
+    <div className='About'>
+      <div
+        className='back'
+        onClick={() => navigate('/')}
+      >
         <span>Back to homepage</span>
       </div>
       <h2>Credits</h2>
@@ -18,9 +21,14 @@ export default function About() {
         All the resources on this website were compiled by the Math Lab 2022-23
         team at Wartburg College:
       </p>
-      <div className="names">
+      <div className='names'>
         {credits.map((name, i) => (
-          <p key={i}>{name}</p>
+          <p
+            key={i}
+            data-testid='credit'
+          >
+            {name}
+          </p>
         ))}
       </div>
       <p>
@@ -28,9 +36,9 @@ export default function About() {
       </p>
       <button>
         <Link
-          to="https://outlook.office365.com/owa/calendar/PeerLabBookings@wartburgedu.onmicrosoft.com/bookings/"
-          alt="Link to Math Lab booking website"
-          target="_blank"
+          to='https://outlook.office365.com/owa/calendar/PeerLabBookings@wartburgedu.onmicrosoft.com/bookings/'
+          alt='Link to Math Lab booking website'
+          target='_blank'
         >
           Book one of us!
         </Link>
