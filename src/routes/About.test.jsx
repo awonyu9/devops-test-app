@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
-import About from './about';
+import About from './about.jsx';
 
 test('renders correct number of names in credits', () => {
   const { getAllByTestId } = render(
